@@ -11,7 +11,7 @@ apply plugin: com.google.cloud.tools.jib.gradle.JibPlugin
 
 jib {
     from {
-        image = 'openjdk:8-jre-slim'
+        image = 'amazoncorretto:8'
     }
     to {
         image = 'teamdojo:latest'
@@ -21,7 +21,8 @@ jib {
         ports = ['8080']
         environment = [
             SPRING_OUTPUT_ANSI_ENABLED: 'ALWAYS',
-            JHIPSTER_SLEEP: '0'
+            JHIPSTER_SLEEP: '0',
+			LC_ALL: 'en_US.UTF-8'
         ]
         useCurrentTimestamp = true
     }
