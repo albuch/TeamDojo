@@ -216,6 +216,9 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-thymeleaf"
     compile "org.zalando:problem-spring-web:0.24.0-RC.0"
     compile "org.springframework.boot:spring-boot-starter-cloud-connectors"
+	compile ("org.springframework.cloud:spring-cloud-cloudfoundry-connector") {
+		exclude group: 'com.fasterxml.jackson.core', module: 'jackson-databind'
+	}
     compile "org.springframework.security:spring-security-config"
     compile "org.springframework.security:spring-security-data"
     compile "org.springframework.security:spring-security-web"
