@@ -183,7 +183,7 @@ dependencies {
     compile "com.fasterxml.jackson.datatype:jackson-datatype-jsr310"
     compile "com.fasterxml.jackson.datatype:jackson-datatype-hibernate5"
     compile "com.fasterxml.jackson.core:jackson-annotations"
-    compile "com.fasterxml.jackson.core:jackson-databind:2.9.9.3"
+    compile "com.fasterxml.jackson.core:jackson-databind:2.9.10"
     compile "com.fasterxml.jackson.module:jackson-module-afterburner"
     compile "javax.cache:cache-api"
     compile "org.hibernate:hibernate-core"
