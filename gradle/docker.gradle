@@ -3,7 +3,7 @@ buildscript {
         gradlePluginPortal()
     }
     dependencies {
-        classpath "gradle.plugin.com.google.cloud.tools:jib-gradle-plugin:1.6.1"
+        classpath "gradle.plugin.com.google.cloud.tools:jib-gradle-plugin:0.10.1"
     }
 }
 
@@ -26,6 +26,7 @@ jib {
         ]
         useCurrentTimestamp = true
     }
+
 }
 
 task copyWwwIntoStatic (type: Copy) {
