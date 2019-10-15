@@ -11,7 +11,7 @@ apply plugin: com.google.cloud.tools.jib.gradle.JibPlugin
 
 jib {
     from {
-        image = 'amazoncorretto:8'
+        image = '012350753444.dkr.ecr.eu-central-1.amazonaws.com/security/amazoncorretto:8'
     }
     to {
         image = 'teamdojo:latest'
@@ -24,6 +24,7 @@ jib {
             JHIPSTER_SLEEP: '0',
 			LC_ALL: 'en_US.UTF-8'
         ]
+        user = "openjdk:openjdk"
         useCurrentTimestamp = true
     }
 }
