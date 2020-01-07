@@ -170,7 +170,7 @@ repositories {
     jcenter()
     //jhipster-needle-gradle-repositories - JHipster will add additional repositories
 }
-jacksonVersion = "2.10.2"
+
 dependencies {
     // Use ", version: jhipster_dependencies_version, changing: true" if you want
     // to use a SNAPSHOT release instead of a stable release
