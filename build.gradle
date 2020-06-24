@@ -187,15 +187,15 @@ dependencies {
     compile "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}"
     compile "com.fasterxml.jackson.module:jackson-module-afterburner:${jacksonVersion}"
     compile "javax.cache:cache-api"
-    compile "org.hibernate:hibernate-core:${hibernate_version}"
+    compile "org.hibernate:hibernate-core"
     compile "com.zaxxer:HikariCP"
     compile "org.apache.commons:commons-lang3"
     compile "commons-io:commons-io"
     compile "javax.transaction:javax.transaction-api"
     compile "org.ehcache:ehcache"
-    compile "org.hibernate:hibernate-jcache:${hibernate_version}"
-    compile "org.hibernate:hibernate-entitymanager:${hibernate_version}"
-    compile "org.hibernate:hibernate-envers:${hibernate_version}"
+    compile "org.hibernate:hibernate-jcache"
+    compile "org.hibernate:hibernate-entitymanager"
+    compile "org.hibernate:hibernate-envers"
     compile "org.hibernate.validator:hibernate-validator"
     compile "org.liquibase:liquibase-core"
     compile "com.mattbertolini:liquibase-slf4j"
@@ -231,7 +231,7 @@ dependencies {
     liquibaseRuntime "org.postgresql:postgresql"
     compile "org.mapstruct:mapstruct-jdk8:${mapstruct_version}"
     annotationProcessor "org.mapstruct:mapstruct-processor:${mapstruct_version}"
-    annotationProcessor "org.hibernate:hibernate-jpamodelgen:${hibernate_version}"
+    annotationProcessor "org.hibernate:hibernate-jpamodelgen"
     annotationProcessor ("org.springframework.boot:spring-boot-configuration-processor:${spring_boot_version}") {
         exclude group: 'com.vaadin.external.google', module: 'android-json'
     }
