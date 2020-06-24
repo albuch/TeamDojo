@@ -196,7 +196,7 @@ dependencies {
     compile "org.hibernate:hibernate-jcache:${hibernate_version}"
     compile "org.hibernate:hibernate-entitymanager:${hibernate_version}"
     compile "org.hibernate:hibernate-envers:${hibernate_version}"
-    compile "org.hibernate.validator:hibernate-validator:${hibernate_version}"
+    compile "org.hibernate.validator:hibernate-validator"
     compile "org.liquibase:liquibase-core"
     compile "com.mattbertolini:liquibase-slf4j"
     liquibaseRuntime "org.liquibase:liquibase-core"
