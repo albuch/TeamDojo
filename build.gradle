@@ -175,7 +175,7 @@ dependencies {
     // Use ", version: jhipster_dependencies_version, changing: true" if you want
     // to use a SNAPSHOT release instead of a stable release
     compile group: "io.github.jhipster", name: "jhipster-framework"
-    compile "org.springframework.boot:spring-boot-starter-cache"
+    compile "org.springframework.boot:spring-boot-starter-cache:${spring_boot_version}"
     compile "io.dropwizard.metrics:metrics-core"
     compile 'io.micrometer:micrometer-registry-prometheus'
     compile "net.logstash.logback:logstash-logback-encoder"
@@ -187,36 +187,36 @@ dependencies {
     compile "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}"
     compile "com.fasterxml.jackson.module:jackson-module-afterburner:${jacksonVersion}"
     compile "javax.cache:cache-api"
-    compile "org.hibernate:hibernate-core"
+    compile "org.hibernate:hibernate-core:${hibernate_version}"
     compile "com.zaxxer:HikariCP"
     compile "org.apache.commons:commons-lang3"
     compile "commons-io:commons-io"
     compile "javax.transaction:javax.transaction-api"
     compile "org.ehcache:ehcache"
-    compile "org.hibernate:hibernate-jcache"
-    compile "org.hibernate:hibernate-entitymanager"
-    compile "org.hibernate:hibernate-envers"
-    compile "org.hibernate.validator:hibernate-validator"
+    compile "org.hibernate:hibernate-jcache:${hibernate_version}"
+    compile "org.hibernate:hibernate-entitymanager:${hibernate_version}"
+    compile "org.hibernate:hibernate-envers:${hibernate_version}"
+    compile "org.hibernate.validator:hibernate-validator:${hibernate_version}"
     compile "org.liquibase:liquibase-core"
     compile "com.mattbertolini:liquibase-slf4j"
     liquibaseRuntime "org.liquibase:liquibase-core"
     liquibaseRuntime "org.liquibase.ext:liquibase-hibernate5:${liquibase_hibernate5_version}"
     liquibaseRuntime sourceSets.main.compileClasspath
-    compile "org.springframework.boot:spring-boot-loader-tools"
-    compile "org.springframework.boot:spring-boot-starter-mail"
-    compile "org.springframework.boot:spring-boot-starter-logging"
-    compile "org.springframework.boot:spring-boot-starter-actuator"
-    compile "org.springframework.boot:spring-boot-starter-aop"
-    compile "org.springframework.boot:spring-boot-starter-data-jpa"
-    compile "org.springframework.boot:spring-boot-starter-security"
-    compile ("org.springframework.boot:spring-boot-starter-web") {
+    compile "org.springframework.boot:spring-boot-loader-tools:${spring_boot_version}"
+    compile "org.springframework.boot:spring-boot-starter-mail:${spring_boot_version}"
+    compile "org.springframework.boot:spring-boot-starter-logging:${spring_boot_version}"
+    compile "org.springframework.boot:spring-boot-starter-actuator:${spring_boot_version}"
+    compile "org.springframework.boot:spring-boot-starter-aop:${spring_boot_version}"
+    compile "org.springframework.boot:spring-boot-starter-data-jpa:${spring_boot_version}"
+    compile "org.springframework.boot:spring-boot-starter-security:${spring_boot_version}"
+    compile ("org.springframework.boot:spring-boot-starter-web:${spring_boot_version}") {
         exclude module: 'spring-boot-starter-tomcat'
     }
-    compile "org.springframework.boot:spring-boot-starter-undertow"
-    compile "org.springframework.boot:spring-boot-starter-websocket"
-    compile "org.springframework.boot:spring-boot-starter-thymeleaf"
+    compile "org.springframework.boot:spring-boot-starter-undertow:${spring_boot_version}"
+    compile "org.springframework.boot:spring-boot-starter-websocket:${spring_boot_version}"
+    compile "org.springframework.boot:spring-boot-starter-thymeleaf:${spring_boot_version}"
     compile "org.zalando:problem-spring-web:0.24.0-RC.0"
-    compile ("org.springframework.boot:spring-boot-starter-cloud-connectors") {
+    compile ("org.springframework.boot:spring-boot-starter-cloud-connectors:${spring_boot_version}") {
 		exclude group: 'org.springframework.cloud', module: 'spring-cloud-cloudfoundry-connector'
 	}
     compile "org.springframework.security:spring-security-config"
@@ -231,8 +231,8 @@ dependencies {
     liquibaseRuntime "org.postgresql:postgresql"
     compile "org.mapstruct:mapstruct-jdk8:${mapstruct_version}"
     annotationProcessor "org.mapstruct:mapstruct-processor:${mapstruct_version}"
-    annotationProcessor "org.hibernate:hibernate-jpamodelgen"
-    annotationProcessor ("org.springframework.boot:spring-boot-configuration-processor") {
+    annotationProcessor "org.hibernate:hibernate-jpamodelgen:${hibernate_version}"
+    annotationProcessor ("org.springframework.boot:spring-boot-configuration-processor:${spring_boot_version}") {
         exclude group: 'com.vaadin.external.google', module: 'android-json'
     }
     testCompile "com.jayway.jsonpath:json-path"
@@ -240,7 +240,7 @@ dependencies {
         exclude group: 'com.vaadin.external.google', module: 'android-json'
     }
     testCompile "org.springframework.security:spring-security-test"
-    testCompile "org.springframework.boot:spring-boot-test"
+    testCompile "org.springframework.boot:spring-boot-test:${spring_boot_version}"
     testCompile "org.assertj:assertj-core"
     testCompile "junit:junit"
     testCompile "org.mockito:mockito-core"
