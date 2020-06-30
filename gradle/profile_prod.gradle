@@ -1,6 +1,5 @@
 apply plugin: 'org.springframework.boot'
 apply plugin: "com.gorylenko.gradle-git-properties"
-//apply plugin: 'com.moowork.node'
 apply plugin: 'com.github.node-gradle.node'
 
 dependencies {

@@ -22,7 +22,7 @@ plugins {
     id "net.ltgt.apt-idea" version "0.19"
     id "net.ltgt.apt" version "0.19"
     id "io.spring.dependency-management" version "1.0.6.RELEASE"
-//    id "com.moowork.node" version "1.2.0"
+    // Switched to gradle v6 compatible node plugin, see https://github.com/srs/gradle-node-plugin/issues/292
     id "com.github.node-gradle.node" version "2.2.4"
     id 'org.liquibase.gradle' version '2.0.1'
     //jhipster-needle-gradle-plugins - JHipster will add additional gradle plugins here
@@ -38,7 +38,6 @@ apply plugin: 'maven'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'war'
 apply plugin: 'propdeps'
-//apply plugin: 'com.moowork.node'
 apply plugin: 'com.github.node-gradle.node'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'idea'
@@ -204,6 +203,7 @@ dependencies {
     liquibaseRuntime "org.liquibase:liquibase-core"
     liquibaseRuntime "org.liquibase.ext:liquibase-hibernate5:${liquibase_hibernate5_version}"
     liquibaseRuntime sourceSets.main.compileClasspath
+    compile "org.springframework.boot:spring-boot-dependencies:${spring_boot_version}"
     compile "org.springframework.boot:spring-boot-loader-tools"
     compile "org.springframework.boot:spring-boot-starter-mail"
     compile "org.springframework.boot:spring-boot-starter-logging"
