@@ -22,7 +22,8 @@ plugins {
     id "net.ltgt.apt-idea" version "0.19"
     id "net.ltgt.apt" version "0.19"
     id "io.spring.dependency-management" version "1.0.6.RELEASE"
-    id "com.moowork.node" version "1.2.0"
+//    id "com.moowork.node" version "1.2.0"
+    id "com.github.node-gradle.node" version "2.2.4"
     id 'org.liquibase.gradle' version '2.0.1'
     //jhipster-needle-gradle-plugins - JHipster will add additional gradle plugins here
 }
