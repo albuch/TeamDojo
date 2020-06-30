@@ -4,13 +4,13 @@ buildscript {
     repositories {
         mavenLocal()
         mavenCentral()
-        maven { url "https://repo.spring.io/plugins-release" }
+        maven { url "http://repo.spring.io/plugins-release" }
         maven { url "https://plugins.gradle.org/m2/" }
     }
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:${spring_boot_version}"
         classpath "io.spring.gradle:propdeps-plugin:0.0.10.RELEASE"
-        classpath "org.openapitools:openapi-generator-gradle-plugin:4.3.0"
+        classpath "org.openapitools:openapi-generator-gradle-plugin:3.3.0"
         classpath "gradle.plugin.com.gorylenko.gradle-git-properties:gradle-git-properties:1.5.2"
         //jhipster-needle-gradle-buildscript-dependency - JHipster will add additional gradle build script plugins here
     }
@@ -22,8 +22,7 @@ plugins {
     id "net.ltgt.apt-idea" version "0.19"
     id "net.ltgt.apt" version "0.19"
     id "io.spring.dependency-management" version "1.0.6.RELEASE"
-    // Switched to gradle v6 compatible node plugin, see https://github.com/srs/gradle-node-plugin/issues/292
-    id "com.github.node-gradle.node" version "2.2.4"
+    id "com.moowork.node" version "1.2.0"
     id 'org.liquibase.gradle' version '2.0.1'
     //jhipster-needle-gradle-plugins - JHipster will add additional gradle plugins here
 }
@@ -38,7 +37,7 @@ apply plugin: 'maven'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'war'
 apply plugin: 'propdeps'
-apply plugin: 'com.github.node-gradle.node'
+apply plugin: 'com.moowork.node'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'idea'
 
@@ -180,13 +179,13 @@ dependencies {
     compile "io.dropwizard.metrics:metrics-core"
     compile 'io.micrometer:micrometer-registry-prometheus'
     compile "net.logstash.logback:logstash-logback-encoder"
-    compile "com.fasterxml.jackson.datatype:jackson-datatype-hppc"
-    compile "com.fasterxml.jackson.datatype:jackson-datatype-jsr310"
-    compile "com.fasterxml.jackson.datatype:jackson-datatype-hibernate5"
-    compile "com.fasterxml.jackson.core:jackson-annotations"
-    compile "com.fasterxml.jackson.core:jackson-databind"
-    compile "com.fasterxml.jackson.core:jackson-core"
-    compile "com.fasterxml.jackson.module:jackson-module-afterburner"
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-hppc:${jacksonVersion}"
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${jacksonVersion}"
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-hibernate5:${jacksonVersion}"
+    compile "com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}"
+    compile "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+    compile "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}"
+    compile "com.fasterxml.jackson.module:jackson-module-afterburner:${jacksonVersion}"
     compile "javax.cache:cache-api"
     compile "org.hibernate:hibernate-core"
     compile "com.zaxxer:HikariCP"
@@ -203,12 +202,10 @@ dependencies {
     liquibaseRuntime "org.liquibase:liquibase-core"
     liquibaseRuntime "org.liquibase.ext:liquibase-hibernate5:${liquibase_hibernate5_version}"
     liquibaseRuntime sourceSets.main.compileClasspath
-    compile "org.springframework.boot:spring-boot-dependencies:${spring_boot_version}"
     compile "org.springframework.boot:spring-boot-loader-tools"
     compile "org.springframework.boot:spring-boot-starter-mail"
     compile "org.springframework.boot:spring-boot-starter-logging"
     compile "org.springframework.boot:spring-boot-starter-actuator"
-    compile "org.springframework.boot:spring-boot-actuator-autoconfigure"
     compile "org.springframework.boot:spring-boot-starter-aop"
     compile "org.springframework.boot:spring-boot-starter-data-jpa"
     compile "org.springframework.boot:spring-boot-starter-security"
@@ -216,19 +213,10 @@ dependencies {
         exclude module: 'spring-boot-starter-tomcat'
     }
     compile "org.springframework.boot:spring-boot-starter-undertow"
-    compile ("io.undertow:undertow-core:2.1.3.Final") {
-        force = true
-    }
-    compile ("io.undertow:undertow-servlet:2.1.3.Final") {
-        force = true
-    }
-    compile("io.undertow:undertow-websockets-jsr:2.1.3.Final") {
-        force = true
-    }
     compile "org.springframework.boot:spring-boot-starter-websocket"
     compile "org.springframework.boot:spring-boot-starter-thymeleaf"
     compile "org.zalando:problem-spring-web:0.24.0-RC.0"
-    compile ("org.springframework.boot:spring-boot-starter-cloud-connectors:${spring_boot_starter_cloud_connectors_version}") {
+    compile ("org.springframework.boot:spring-boot-starter-cloud-connectors") {
 		exclude group: 'org.springframework.cloud', module: 'spring-cloud-cloudfoundry-connector'
 	}
     compile "org.springframework.security:spring-security-config"
